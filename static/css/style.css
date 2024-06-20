@@ -1146,7 +1146,7 @@ h2 span {
 }
 .menus .menus-content .cont h5 {
     font-size: 24px;
-    color: #1e5a0c;
+    color: #529a3c;
     margin-bottom: 10px;
     text-align: left;
     border-bottom: 1px dashed rgba(255,255,255, 0.1);
@@ -1154,7 +1154,7 @@ h2 span {
     letter-spacing: 1px;
 }
 .menus .menus-content .cont h5 .price {
-    color: #1e5a0c;
+    color: #529a3c;
     float: right;
 }
 .menus .menus-content .active {
