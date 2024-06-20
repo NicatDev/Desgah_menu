@@ -1134,8 +1134,8 @@ h2 span {
     position: relative;
     padding: 10px;
 }
-.menus .tabs-icon .owl-item.actived .item img,
-.menus .tabs-icon .item.active img {
+.menus .tabs-icon .owl-item.actived .item .icon,
+.menus .tabs-icon .item.active .icon {
     filter:invert(1);
 }
 .menus .menus-content .cont {
