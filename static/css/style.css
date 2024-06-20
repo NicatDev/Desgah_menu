@@ -407,8 +407,8 @@ input[type="checkbox"] {
 
 
 /* ======= Owl-Theme settings ======= */
-.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
-    background: #1e5a0c;
+.owl-theme .owl-dots .owl-dot.active img, .owl-theme .owl-dots .owl-dot:hover img {
+    filter: invert(1);
 }
 .owl-theme .owl-dots .owl-dot span {
     width: 7px;
