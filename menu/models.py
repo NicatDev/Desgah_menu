@@ -12,8 +12,8 @@ class Product(models.Model):
     category = models.ForeignKey(Category,on_delete=models.CASCADE,related_name='menu')
     price = models.CharField(max_length=300)
     title = models.CharField(max_length=200)
-    description = models.TextField()
-    icon = models.ImageField()
+    description = models.TextField(null=True,blank=True)
+    icon = models.ImageField(null=True,blank=True)
 
     def __str__(self):
         return self.title
