@@ -26,6 +26,21 @@ SECRET_KEY = 'django-insecure-^yw!ofuvs)+8-!lmj-3kz1j$gqy4&f9y1$7hu5017kd159(!o1
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
+CORS_ALLOWED_ORIGINS = [
+    'https://menu.desgah.az',
+    'https://desgah.az',
+    'https://www.desgah.az',
+]
+# Application definition
+CSRF_TRUSTED_ORIGINS = [
+    'https://menu.desgah.az',
+    'http://menu.desgah.az',
+    'https://www.desgah.az',
+    'https://desgah.az',
+    'http://www.desgah.az',
+    'http://desgah.az',
+]
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
