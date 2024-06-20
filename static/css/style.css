@@ -1136,7 +1136,7 @@ h2 span {
 }
 .menus .tabs-icon .owl-item.actived .item .icon,
 .menus .tabs-icon .item.active .icon {
-    filter:invert(1);
+    filter:invert(1) !important;
 }
 .menus .menus-content .cont {
     display: none;
