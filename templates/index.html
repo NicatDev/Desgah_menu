@@ -92,7 +92,7 @@
                         <div class="tabs-icon mb-40 col-md-10 offset-md-1 text-center">
                             <div class="owl-carousel owl-theme">
                                 {% for category in categories %}
-                                <div id="c-{{ category.id }}" class="item {% if forloop.first %} active {% endif %} hoverable"> <span class="icon flaticon-022-tray"></span>
+                                <div id="c-{{ category.id }}" class="item {% if forloop.first %} active {% endif %} hoverable"> <img src="{{category.icon.url}}"></span>
                                     <h6>{{ category.title }}</h6>
                                 </div>
                                 {% endfor %}
