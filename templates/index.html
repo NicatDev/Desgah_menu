@@ -114,8 +114,8 @@
                                         {% for menu in category.menu.all %}
                                         {% if forloop.counter|divisibleby:2 == False %}
                                         <div class="menu-info">
-                                            <h5>{{ menu.title }} <span class="price">{{ menu.price }} azn</span></h5>
-                                            <p>{{ menu.description }}</p>
+                                            <h5 style="color:#529a3c;">{{ menu.title }} <span class="price">{{ menu.price }} azn</span></h5>
+                                            <p style="#529a3c;">{{ menu.description }}</p>
                                         </div>
                                         {% endif %}
                                         {% endfor %} 
