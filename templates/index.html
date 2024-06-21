@@ -110,11 +110,10 @@
                          
                             
                             <div id="c-{{ category.id }}-content"  class="cont {% if forloop.first %} active {% endif %}">
-                                {% for subcategory in category.subs.all %}
-                                <h3 style="text-align:center;">{{subcategory.title}}</h3>
+                             
                                 <div class="row">
                                     <div class="col-md-5">
-                                        {% for menu in subcategory.menu.all %}
+                                        {% for menu in category.menu.all %}
                                         {% if forloop.counter|divisibleby:2 == False %}
                                         <div class="menu-info">
                                             <h5 style="color:#529a3c;">{{ menu.title }} <span style="color:#529a3c;" class="price">{{ menu.price }} azn</span></h5>
@@ -124,7 +123,7 @@
                                         {% endfor %} 
                                     </div>
                                     <div class="col-md-5 offset-md-2">
-                                        {% for menu in subcategory.menu.all %}
+                                        {% for menu in category.menu.all %}
                                         {% if forloop.counter|divisibleby:2 == True %}
                                         <div class="menu-info">
                                             <h5 style="color:#529a3c;">{{ menu.title }} <span style="color:#529a3c;" class="price">{{ menu.price }} azn</span></h5>
@@ -134,7 +133,7 @@
                                         {% endfor %}
                                     </div>
                                 </div>
-                                {% endfor %}
+                         
                             </div>
                   
                             {% endfor %}
