@@ -1,5 +1,5 @@
 from django.contrib import admin
-from menu.models import Category,Product,Combo,ComboItems,SportItem
+from menu.models import Category,Product,Combo,ComboItems,SportItem,SubCategory
 # Register your models here.
 admin.site.register(Category)
 admin.site.register(Product)
@@ -13,3 +13,4 @@ class ComboAdmin(admin.ModelAdmin):
     
 admin.site.register(Combo,ComboAdmin)
 admin.site.register(SportItem)
+admin.site.register(SubCategory)
