@@ -2321,6 +2321,7 @@ body {
         background: #1b1b1b;
         text-align: left;
         padding: 10px 30px;
+        display: block;
     }
     .navbar .nav-link {
         margin: 0px auto !important;
