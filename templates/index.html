@@ -29,6 +29,12 @@
     html {
         scroll-behavior: smooth;
         }
+        .myFlexSpec{
+            flex:0 0 100%;
+        }
+        .menu-today-container:hover .comboUl {
+            height: 100% !important;
+          }
 </style>
 
 <body>
@@ -211,9 +217,9 @@
                         <div class="menu-today-img-area"><img src="{{ comb.icon.url }}" alt="Dəsgah kombo set - {{ comb.title }}" ></div>
                         <div class="menu-today-text-area">
                             <h4 class="menu-today-heading">{{ comb.title }} - <span>{{ comb.price }} azn</span></h4>
-                            <ul style="display:flex;flex-wrap:wrap;padding-bottom:30%;height:100px;">
+                            <ul class="comboUl" style="display:flex;flex-wrap:wrap;height:100px;justify-content:space-between;">
                                 {% for item in comb.comboitems.all %}
-                                <li style="flex:0 0 35%;">{{ item.title }}</li>
+                                <li class="myFlexSpec">{{ forloop.counter }}) {{ item.title }}</li>
                                 {% endfor %}
                             </ul>
                         </div>
