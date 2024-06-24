@@ -4,8 +4,8 @@ from django.urls import reverse, NoReverseMatch
 
 class StaticSitemap(Sitemap):
     protocol = 'https'
-    priority = 0.5
-    changefreq = "daily"
+    priority = 1
+    changefreq = "monthly"
 
     def items(self):
         return [
