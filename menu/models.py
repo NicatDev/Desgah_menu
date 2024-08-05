@@ -2,7 +2,7 @@ from django.db import models
 
 COMBO_CHOICES = [
     ('Qəlyan setləri','Qəlyan setləri'),
-    ('İçki setləri','İçki setləri'),
+    ('Çay setləri','Çay setləri'),
     ('Pivə setləri','Pivə setləri'),
 ]
 
