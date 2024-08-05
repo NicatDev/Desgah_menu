@@ -2,7 +2,7 @@ from django.shortcuts import render
 from menu.models import *
 # Create your views here.
 def home(request):
-    categories = Category.objects.all()
+    categories = Category.objects.all().order_by('ordering')
     product = Product.objects.all()
     combo = Combo.objects.all()
     sportitems = SportItem.objects.all()
