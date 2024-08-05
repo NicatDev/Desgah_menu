@@ -163,7 +163,7 @@ $(function() {
         , autoplay: false
         , dots: false
         , nav: true
-        , navText: ['<span class="ti-shift-left-alt"></span>', '<span class="ti-shift-right-alt"></span>']
+        , navText: ['<i class="fa-sharp fa-solid fa-arrow-left"></i>', '<i class="fa-sharp fa-solid fa-arrow-right"></i>']
         , responsiveClass: true
         , responsive: {
             0: {

@@ -268,20 +268,16 @@ input[type="checkbox"] {
     transform: translate(0%, -50%);
 }
 .line-hr-left {
-    width: 70px;
+    width: 120px;
     border-top: 1px solid #1e5a0c;
-    margin: 0 0 20px 0;
+    margin-left:auto
 }
 .line-hr-right {
-    width: 70px;
+    width: 120px;
     border-top: 1px solid #1e5a0c;
-    margin: 0 0 0 auto;
+    margin-right:auto;
 }
-.line-hr-center {
-    width: 70px;
-    border-top: 1px solid #1e5a0c;
-    margin: auto;
-}
+
 .bg-darkcolor {
     background: #101010;
 }
@@ -1231,11 +1227,11 @@ h2 span {
     text-align: center;
     margin-bottom: 20px;
 }
-
-@media screen and (max-width: 767px) {
-    .menus .owl-theme .owl-nav [class*=owl-] {
-    display: none;
+.menus .owl-theme .owl-nav [class*=owl-] {
+    color:white;
 }
+@media screen and (max-width: 767px) {
+
 }
     
 /* menupage price */
@@ -2446,4 +2442,70 @@ body {
     .text-right {
         text-align: center;
     }
+}
+.d-none{
+    display:none
+}
+header{
+    background-attachment: local !important;
+    }
+html {
+    scroll-behavior: smooth;
+    }
+    .myFlexSpec{
+        flex:0 0 100%;
+    }
+    .menu-today-container:hover .comboUl {
+        height: 100% !important;
+      }
+      #navbarSupportedContent.show .collapse {
+        display: block;
+    }
+    .owl-prev{
+        opacity:1 !important;
+    }
+    .owl-next{
+        opacity:1 !important;
+    }
+    .disabled{
+        opacity:0 !important
+    }
+    .owl-prev, .owl-next {
+        width: 15px;
+        height: 100px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: block !important;
+        border:0px solid black;
+    }
+    .owl-prev { left: -20px; }
+    .owl-next { right: -20px; }
+    .owl-prev i, .owl-next i { color: #ccc;}
+
+    @media screen and (max-width: 601px) {
+    .menus .owl-carousel .owl-nav .owl-prev {
+       top:110%;
+       left:30%;
+    }
+    .menus .owl-carousel .owl-nav .owl-next {
+        top:110%;
+        right:30%;
+    }
+    .menus .tabs-icon .item h6 {
+        font-size:23px;
+    }
+    .section-title {
+      font-size:50px;
+      }  
+}
+@media screen and (max-width: 320px) {
+    .menus .owl-carousel .owl-nav .owl-prev {
+        top:105%;
+        right:20%;
+     }
+     .menus .owl-carousel .owl-nav .owl-next {
+        top:105%;
+         right:20%;
+     }
 }

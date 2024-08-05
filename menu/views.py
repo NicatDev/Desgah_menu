@@ -6,10 +6,12 @@ def home(request):
     product = Product.objects.all()
     combo = Combo.objects.all()
     sportitems = SportItem.objects.all()
+    combo_types = [x[0] for x in COMBO_CHOICES]
     context = {
         'combo':combo,
         'categories':categories,
         'product':product,
-        'sportitems':sportitems
+        'sportitems':sportitems,
+        'combo_types':combo_types
     }
     return render(request,'index.html',context)

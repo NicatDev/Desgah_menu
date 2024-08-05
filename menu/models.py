@@ -1,5 +1,11 @@
 from django.db import models
 
+COMBO_CHOICES = [
+    ('Qəlyan setləri','Qəlyan setləri'),
+    ('İçki setləri','İçki setləri'),
+    ('Pivə setləri','Pivə setləri'),
+]
+
 # Create your models here.
 class Category(models.Model):
     title = models.CharField(max_length=200)
@@ -21,6 +27,7 @@ class Product(models.Model):
         return self.title
     
 class Combo(models.Model):
+    combo_type = models.CharField(max_length=300,choices=COMBO_CHOICES,null=True,blank=True)
     title = models.CharField(max_length = 300)
     icon = models.ImageField()
     price = models.CharField(max_length=300)
