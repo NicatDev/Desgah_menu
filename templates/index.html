@@ -137,7 +137,7 @@
                     <div class="tabs-icon mb-40 col-md-10 offset-md-1 text-center">
                         <div class="owl-carousel owl-theme">
                             {% for type in combo_types %}
-                            <div onclick="filterDivs('{{type}}')" class="{% if forloop.first %} active {% endif %} hoverable">
+                            <div style="cursor:pointer" onclick="filterDivs('{{type}}')" class="{% if forloop.first %} active {% endif %} hoverable">
                                           
                                 <h6 value="{{type}}" style="color:gray" class="type" >{{ type }}</h6>
                             </div>
