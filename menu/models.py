@@ -10,7 +10,8 @@ COMBO_CHOICES = [
 class Category(models.Model):
     title = models.CharField(max_length=200)
     icon = models.ImageField()
-
+    ordering = models.PositiveSmallIntegerField(default=8)
+    
     def __str__(self):
         return self.title
 
@@ -31,8 +32,8 @@ class Combo(models.Model):
     title = models.CharField(max_length = 300)
     icon = models.ImageField()
     price = models.CharField(max_length=300)
-    ordering = models.PositiveSmallIntegerField(default=8)
-    
+
+
     def __str__(self):
         return self.title
 
