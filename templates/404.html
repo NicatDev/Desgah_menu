@@ -12,6 +12,7 @@
     <link rel="shortcut icon" href="{% static 'logo.png' %}">
     <link rel="stylesheet" href="{% static 'css/plugins.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Global site tag (gtag.js' %}) - Google Analytics -->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-144098545-1"></script>
     <script>
@@ -22,23 +23,7 @@
     </script>
 </head>
 
-<style>
-    header{
-        background-attachment: local !important;
-        }
-    html {
-        scroll-behavior: smooth;
-        }
-        .myFlexSpec{
-            flex:0 0 100%;
-        }
-        .menu-today-container:hover .comboUl {
-            height: 100% !important;
-          }
-          #navbarSupportedContent.show .collapse {
-            display: block;
-        }
-</style>
+
 
 <body>
     <!-- Preloader -->
@@ -75,7 +60,7 @@
         </div>
     </nav>
     <!-- Header -->
-    <header class="banner-header valign bg-img bg-img-fixed" style="background-attachment:local !important;" data-overlay-dark="5" data-background="{% static 'baklava.jpg' %}">
+    <header class="banner-header valign bg-img bg-img-fixed" style="background-attachment:local !important;" data-overlay-dark="5" data-background="{% static 'baklava.webp' %}">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-right caption mt-90 animate-box" data-animate-effect="fadeInUp">
@@ -89,14 +74,18 @@
     <!-- Menus -->
     <section id="menu" class="menus menu section-padding bg-darkcolor">
         <div class="container">
-            <div class="row">
-                <div class="col-md-10 offset-md-1 mb-30 text-center">
+            <div class="row d-flex">
+                <div onclick="openTab('tab1')" class="col-6  mb-30 text-right">
                     <h2 class="section-title">Menu </h2>
-                    <hr class="line line-hr-center">
+                    <hr class="line line-hr-left" id="tab1-hr">
+                </div>
+                <div onclick="openTab('tab2')" class="col-6  mb-30 text-left">
+                    <h2 class="section-title">Setlər </h2>
+                    <hr class="line line-hr-right d-none" id="tab2-hr">
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-10 offset-md-1">
+            <div id="tab1" class="row">
+               <div  class="col-md-10 offset-md-1">
                     <div class="row">
                         <div class="tabs-icon mb-40 col-md-10 offset-md-1 text-center">
                             <div class="owl-carousel owl-theme">
@@ -148,13 +137,57 @@
                             {% endfor %}
                         </div>
                     </div>
+                </div> 
+           
+            </div>
+            <div id="tab2" class="row d-none">
+                <div class="col-md-10 offset-md-1">
+                    <div class="tabs-icon mb-40 col-md-10 offset-md-1 text-center">
+                        <div class="owl-carousel owl-theme">
+                            {% for type in combo_types %}
+                            <div onclick="filterDivs('{{type}}')" class="{% if forloop.first %} active {% endif %} hoverable">
+                                          
+                                <h6 value="{{type}}" style="color:gray" class="type" >{{ type }}</h6>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="menus-content col-md-12">
+                        
+                      
+                        
+                        <div class="  active ">
+                         
+                            <div class="row">
+                                    
+                                {% for comb in combo %}
+                                
+                                <div value="{{comb.combo_type}}" class="col-md-5 {% if forloop.counter|divisibleby:2 == True %} offset-md-2  {% endif %} filtered-type " > 
+                                
+                                  
+                                    <div class="menu-info">
+                                        <h5 style="color:#529a3c;display:flex;justify-content:space-between;border-bottom:1px dashed rgba(255,255,255, 0.1)">{{ comb.title }} <span style="color:#529a3c;" class="price">{{ comb.price }} azn</span></h5>
+                                        <p style="#529a3c;"> {% for item in comb.comboitems.all %}  {{ item.title }} {% if not forloop.last %}, {% endif %}    {% endfor %} </p>
+                                    </div>
+                             
+                               
+                                </div>
+                               
+                            
+                                {% endfor %}
+                            </div>
+                     
+                        </div>
+              
+           
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- Promo video - Opening hours -->
     <section class="video-opening-hours-section">
-        <div class="background bg-img bg-img-fixed section-padding pb-0" data-background="{% static 'tea.jpg' %}" data-overlay-dark="5">
+        <div class="background bg-img bg-img-fixed section-padding pb-0" data-background="{% static 'tea.webp' %}" data-overlay-dark="5">
             <div class="container">
                 <div class="row">
                    <!-- Promo video -->
@@ -217,9 +250,9 @@
                 {% for comb in combo %}
                 <div class="col-md-4">
                     <div class="menu-today-container">
-                        <div class="menu-today-img-area"><img src="{{ comb.icon.url }}" alt="Dəsgah kombo set - {{ comb.title }}" ></div>
+                        <div class="menu-today-img-area"><img style="filter: invert(0.5);" src="{{ comb.icon.url }}" alt="Dəsgah kombo set - {{ comb.title }}" ></div>
                         <div class="menu-today-text-area">
-                            <h4 class="menu-today-heading">{{ comb.title }} - <span>{{ comb.price }} azn</span></h4>
+                            <h4 class="menu-today-heading">{{ comb.title }} - <span style="font-family:math">{{ comb.price }} </span> azn</h4>
                             <ul class="comboUl" style="display:flex;flex-wrap:wrap;height:100px;justify-content:space-between;">
                                 {% for item in comb.comboitems.all %}
                                 <li class="myFlexSpec">{{ forloop.counter }}) {{ item.title }}</li>
@@ -310,6 +343,91 @@
             </div>
         </div>
     </footer>
+    <script>
+        function openTab(tabId) {
+            // List of all possible tab IDs
+            const tabIds = ['tab1', 'tab2']; 
+        
+            tabIds.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    if (id === tabId) {
+                        element.classList.remove('d-none'); 
+                    } else {
+                        element.classList.add('d-none'); 
+                    }
+                }
+            });
+            let tabhrId = tabId + '-hr'
+            let tabhrIds = ['tab1-hr','tab2-hr']
+            tabhrIds.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    if (id === tabhrId) {
+                        element.classList.remove('d-none'); 
+                    } else {
+                        element.classList.add('d-none'); 
+                    }
+                }
+            });
+        }
+        
+    </script>
+    <script>
+
+            function filterDivs(clickedId) {
+                const elements = document.querySelectorAll('.type');
+
+                    elements.forEach(element => {
+                    
+                        if (element.getAttribute('value') === clickedId) {
+                    
+                            element.style.color = 'white';
+                        } else {
+                
+                            element.style.color = 'gray';
+                        }
+                    });
+              
+                var divs = document.querySelectorAll('.filtered-type');
+            
+                divs.forEach(function(div) {
+                    console.log(div.getAttribute('value'), '---------');
+                    if (div.getAttribute('value') != clickedId) {
+                        div.style.display = 'none';
+                    } else {
+                        div.style.display = 'block';
+                    }
+                 
+                    div.classList.remove('offset-md-2');
+                });
+    
+                var counter = 1; 
+                divs.forEach(function(div) {
+                    if (div.style.display == 'block') {
+             
+                        if (counter % 2 == 0) {
+                            div.classList.add('offset-md-2');
+                        }
+                        counter++;
+                    }
+                });
+            }
+    
+
+
+            document.addEventListener('DOMContentLoaded', function() {
+                var comboTypes = [
+                    {% for type in combo_types %}
+                    "{{ type }}"{% if not forloop.last %},{% endif %}
+                    {% endfor %}
+                ];
+    
+                if (comboTypes.length > 0) {
+                    filterDivs(comboTypes[0]); // Call the function with the first value
+                }
+            });
+    </script>
     <!-- jQuery -->
     <script src="{% static 'js/jquery-3.0.0.min.js' %}"></script>
     <script src="{% static 'js/jquery-migrate-3.0.0.min.js' %}"></script>
